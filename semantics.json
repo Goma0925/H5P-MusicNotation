@@ -70,6 +70,196 @@
           "widget": "html"
         },
         {
+          "name": "buttonVisibility",
+          "type": "group",
+          "label": "Button visibility (Student view)",
+          "fields": [
+            {
+              "name": "toggleSidebar",
+              "type": "boolean",
+              "label": "Side bar menu",
+              "default": true
+            },
+            {
+              "name": "tabButtonGroup",
+              "type": "group",
+              "label": "Mode buttons",
+              "fields": [
+                {
+                  "name": "notationTabBtn",
+                  "type": "boolean",
+                  "label": "Notation",
+                  "default": true
+                },
+                {
+                  "name": "annotationTabBtn",
+                  "type": "boolean",
+                  "label": "Annotation",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "playBtnGroup",
+              "type": "boolean",
+              "label": "Play & rewind buttons",
+              "default": true
+            },
+            {
+              "name": "colorPickerBtn",
+              "type": "boolean",
+              "label": "Color button",
+              "default": true
+            },
+            {
+              "name": "importButtonGroup",
+              "type": "group",
+              "label": "Import buttons",
+              "fields": [
+                {
+                  "name": "importAudioFileBtn",
+                  "type": "boolean",
+                  "label": "Import Audio File",
+                  "default": true
+                },
+                {
+                  "name": "importXMLBtn",
+                  "type": "boolean",
+                  "label": "Import XML",
+                  "default": true
+                },
+                {
+                  "name": "exportFileBtn",
+                  "type": "boolean",
+                  "label": "Export MEI",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "noteGroup",
+              "type": "group",
+              "label": "Note buttons",
+              "fields": [
+                {
+                  "name": "breveNote",
+                  "type": "boolean",
+                  "label": "Breve note"
+                },
+                {
+                  "name": "fullNote",
+                  "type": "boolean",
+                  "label": "Full note"
+                },
+                {
+                  "name": "halfNote",
+                  "type": "boolean",
+                  "label": "Half note"
+                },
+                {
+                  "name": "quarterNote",
+                  "type": "boolean",
+                  "label": "Quarter note"
+                },
+                {
+                  "name": "eigthNote",
+                  "type": "boolean",
+                  "label": "Eigth mote"
+                },
+                {
+                  "name": "sixteenthNote",
+                  "type": "boolean",
+                  "label": "Sixteenth note"
+                },
+                {
+                  "name": "thirtysecondNote",
+                  "type": "boolean",
+                  "label": "Thirty second note"
+                }
+              ]
+            },
+            {
+              "name": "dotGroup",
+              "type": "group",
+              "label": "Dot buttons",
+              "fields": [
+                {
+                  "name": "oneDot",
+                  "type": "boolean",
+                  "label": "One dot (.)"
+                },
+                {
+                  "name": "twoDot",
+                  "type": "boolean",
+                  "label": "Two dot (..)"
+                }
+              ]
+            },
+            {
+              "name": "articGroup",
+              "type": "group",
+              "label": "Artic buttons",
+              "fields": [
+                {
+                  "name": "staccatoBtn",
+                  "type": "boolean",
+                  "label": "Staccato",
+                  "default": true
+                },
+                {
+                  "name": "tenutoBtn",
+                  "type": "boolean",
+                  "label": "Tenuto",
+                  "default": true
+                },
+                {
+                  "name": "marcatoBtn",
+                  "type": "boolean",
+                  "label": "Marcato",
+                  "default": true
+                },
+                {
+                  "name": "accentBtn",
+                  "type": "boolean",
+                  "label": "Accent",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "modGroup",
+              "type": "group",
+              "label": "Mod buttons",
+              "fields": [
+                {
+                  "name": "tupletBtn",
+                  "type": "boolean",
+                  "label": "Tuple",
+                  "default": true
+                },
+                {
+                  "name": "tieNotes",
+                  "type": "boolean",
+                  "label": "Tie",
+                  "default": true
+                },
+                {
+                  "name": "organizeBeams",
+                  "type": "boolean",
+                  "label": "Organize",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "showBBDiv",
+              "type": "boolean",
+              "label": "BBOxes",
+              "default": true
+            }
+          ]
+        },
+        {
           "name": "notations",
           "type": "list",
           "label": "Notations",

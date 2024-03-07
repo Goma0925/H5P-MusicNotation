@@ -178,6 +178,11 @@ textarea{
   height: 90% !important;
 }
 
+.h5p-question-content #btnToolbar{
+  margin-top: 1.3rem;
+  min-height: 3rem;
+}
+
 .h5p-question-image{
   margin: 1em 1em 0 1em !important;
 }

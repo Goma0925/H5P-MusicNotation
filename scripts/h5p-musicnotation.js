@@ -3,8 +3,10 @@ import {
 }
   from "./globals";
 import NoteInputField from "./noteinputfield";
+import { toggleButtonVisiblity } from "./toggleButtonVisiblity.js";
 import { uuidv4 } from "vibe-editor/src/scripts/js/utils/random";
 import * as sw from 'stopword';
+
 
 const MusicNotation = (function () {
 
@@ -27,11 +29,11 @@ const MusicNotation = (function () {
    * @param {Object} [contentData] - contentData.
    */
   function MusicNotation(config, contentId, contentData) {
+    console.log("MusicNotation", config)
     // Initialize
     if (!config) {
       return;
     }
-    console.log("CONFIG", config, contentData)
 
     // get User Data, since in some instances contentData is not loading the state after saving it actively
     var userData
@@ -54,6 +56,7 @@ const MusicNotation = (function () {
     if (userData) {
       this.extras = MusicNotation.extend(userData);
     }
+    console.log("DATA LIST", "\nuserData\n", userData, "\nextras\n", this.extras)
     const defaultLanguage = (this.extras && this.extras.metadata) ? this.extras.metadata.defaultLanguage || 'en' : 'en';
     this.languageTag = MusicNotation.formatLanguageCode(defaultLanguage);
 
@@ -107,8 +110,7 @@ const MusicNotation = (function () {
     this.taskContainerHeight = 0 // height of the task container. Will only set once per Instance and shouldn't change after updating the 
 
   };
-
-  // Extends Question
+  
   MusicNotation.prototype = Object.create(Question.prototype);
   MusicNotation.prototype.constructor = MusicNotation;
 
@@ -157,8 +159,7 @@ const MusicNotation = (function () {
    * Register the DOM elements with H5P.Question.
    */
   MusicNotation.prototype.registerDomElements = function () {
-    const that = this;
-
+    const that = this;    
     // Create InputFields 
     if (this.previousState?.mei || this.studentMEI) {
       if(this.previousState?.mei) this.studentSVG = null
@@ -331,11 +332,13 @@ const MusicNotation = (function () {
 
 
         newDiv.prepend(svgout)
+        toggleButtonVisiblity(svgout, d)
       })
       if (d.paragraphText.length > 0) {
         newDiv.prepend(parser.parseFromString(d.paragraphText, "text/html").body.firstChild)
       }
       this.content.prepend(newDiv)
+
     })
 
     this.setContent(this.content);
@@ -344,6 +347,8 @@ const MusicNotation = (function () {
     if (this.displayInteractiveNotation) {
       this.addButtons();
     }
+
+    console.log("this.content", this.content.childNodes[0])
   };
 
 
@@ -1650,5 +1655,6 @@ const MusicNotation = (function () {
 
   return MusicNotation;
 })();
+
 
 export default MusicNotation;
