@@ -180,6 +180,8 @@ const MusicNotation = (function () {
 
           //Layout
           var container = vibecore.getContainer()
+          // Note Amon: Here, apply the button visibility to the student view music note editor.
+          toggleButtonVisiblity(container, this.params)
           if (this.taskContainerHeight === 0) {
             Array.from(container.children).forEach(c => {
               if (c.id === "sidebarContainer") return
@@ -331,8 +333,10 @@ const MusicNotation = (function () {
         zoomBtnContainer.append(zoomOutButton)
 
 
+        // Note Amon: Here, we apply the button visibility to the question description paragraph's
+        // music note editor.
+        toggleButtonVisiblity(svgout, that.params)
         newDiv.prepend(svgout)
-        toggleButtonVisiblity(svgout, d)
       })
       if (d.paragraphText.length > 0) {
         newDiv.prepend(parser.parseFromString(d.paragraphText, "text/html").body.firstChild)
@@ -347,8 +351,6 @@ const MusicNotation = (function () {
     if (this.displayInteractiveNotation) {
       this.addButtons();
     }
-
-    console.log("this.content", this.content.childNodes[0])
   };
 
 
