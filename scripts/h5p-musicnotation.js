@@ -200,7 +200,6 @@ const MusicNotation = (function () {
             musicProcessor.setAudioTimes(this.alignmentMap)
             this.alignmentAudioDiv.querySelector("audio").addEventListener("timeupdate", musicProcessor.fetchAudioSeconds)
           }
-
         }).bind(this)
       },
         {
