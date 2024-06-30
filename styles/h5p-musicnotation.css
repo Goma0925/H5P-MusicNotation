@@ -245,3 +245,7 @@ textarea{
 .h5p-audio-not-supported-icon ~ span{
   display: none;
 }
+
+.h5p-audio-not-supported{
+ display: none;
+}
