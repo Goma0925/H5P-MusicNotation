@@ -29,7 +29,7 @@ const MusicNotation = (function () {
    * @param {Object} [contentData] - contentData.
    */
   function MusicNotation(config, contentId, contentData) {
-    console.log("MusicNotation", config)
+    console.log("MusicNotation 1.0.20", config)
     // Initialize
     if (!config) {
       return;
